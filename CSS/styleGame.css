@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+background-color: rgb(52, 47, 65);
+
+}
+
+div{
+display: flex;
+align-items: center;
+justify-content: center;
+justify-items: center;
+
+}
+.gameScreen{
+border: white 4px solid;
+width: 50%;
+height: 900px;
+margin: 0 auto;
+position: relative;
+background-color: rgb(68, 68, 110);
+overflow-x: hidden;
+overflow-y: hidden; 
+}
+
+.raceTrack{
+width:900px;
+height: 890px;
+position: absolute;
+}
+
+.tracks{
+position: absolute;
+width: 550px;
+top: -70px;
+animation: trackAnimation 200ms infinite;
+}
+
+@keyframes trackAnimation{
+from{transform: translateY(-70px)}
+to {transform: translateY(40px);}
+}
