@@ -34,12 +34,25 @@ position: absolute;
 
 .tracks{
 position: absolute;
-width: 550px;
-top: -70px;
+width: 100px;
+top: 10px;
 animation: trackAnimation 200ms infinite;
+height: 1000px;
 }
 
+
 @keyframes trackAnimation{
-from{transform: translateY(-70px)}
+from{transform: translateY(-120px)}
 to {transform: translateY(40px);}
+}
+
+.borderTracks{
+width: 720px;
+position: absolute;
+animation: borderTrackAnimation 300ms infinite;
+}
+
+@keyframes borderTrackAnimation{
+from{transform: translateY(-50px)}
+to {transform: translateY(100px);}
 }
