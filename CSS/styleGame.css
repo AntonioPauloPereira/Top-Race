@@ -56,3 +56,24 @@ animation: borderTrackAnimation 300ms infinite;
 from{transform: translateY(-50px)}
 to {transform: translateY(100px);}
 }
+
+.player{
+position: absolute;
+width: 30%;
+margin-top: 140%;
+margin-left:110px;
+animation:playerMove 200ms  ;
+}
+
+@keyframes playerMove{
+from{margin-left: 110px;}
+to{margin-left: -110px;}
+}
+.enemy{
+position: absolute;
+width: 30%;
+margin-top: -140%;
+margin-left:110px;
+
+    
+}
