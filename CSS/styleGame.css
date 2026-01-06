@@ -59,20 +59,20 @@ to {transform: translateY(100px);}
 
 .player{
 position: absolute;
-width: 30%;
-margin-top: 140%;
+width: 19%;
+margin-top: 76%;
 margin-left:110px;
-animation:playerMove 200ms  ;
+animation:playerMove 1s infinite;
 }
 
 @keyframes playerMove{
-from{margin-left: 110px;}
-to{margin-left: -110px;}
+0%{transform: translateX(110px);}
+25%{transform: translateX(-110px);}
 }
 .enemy{
 position: absolute;
-width: 30%;
-margin-top: -140%;
+width: 19%;
+margin-top: -76%;
 margin-left:110px;
 
     
