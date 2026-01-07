@@ -60,20 +60,28 @@ to {transform: translateY(100px);}
 .player{
 position: absolute;
 width: 19%;
-top: 76%;
+top: 700px;
 left:401px;
 }
-
-/*
-@keyframes playerMove{
-0%{transform: translateX(110px);}
-25%{transform: translateX(-110px);}
-}*/
 
 .enemy{
 position: absolute;
 width: 19%;
-margin-top: -76%;
+top: -135px;
 left:290px; 
+animation: enemyAnimation infinite 5s;
 }
 
+@keyframes enemyAnimation{
+0%{top : -135px}
+100%{top: 900px}
+}
+
+.points{
+position: absolute;
+font-size: 50px;
+color: white;
+margin: 1%;
+
+
+}
