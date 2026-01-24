@@ -85,3 +85,10 @@ margin: 1%;
 
 
 }
+
+.control{
+    position: absolute;
+    user-select: none;
+    bottom: 10%;
+    left: 5px;
+}
