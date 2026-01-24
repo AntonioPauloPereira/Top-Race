@@ -1,6 +1,8 @@
 let playerX = 401; //variável que define a posição horizontal padrão do jogador.
 const player = document.getElementById("player"); //pega a imagem em html do jogador. 
 
+let vivo = true; 
+
 window.addEventListener( "keydown", (e) => { //Checa se há teclas pressionadas.
 let key = e.key; //variável que repressenta as teclas.
 
@@ -17,18 +19,20 @@ moverEsquerda()
 function moverDireita(){
 
 if(playerX == 290) { 
-playerX = 401; 
+if(vivo == true){
+    playerX = 401; 
 player.style.left = playerX + "px"
+}
 }
 
 }
 
 function moverEsquerda(){
     if(playerX == 401){
-
+if(vivo == true){
 playerX = 290;
 player.style.left = playerX + "px";
-
+}
     }
 }
 
