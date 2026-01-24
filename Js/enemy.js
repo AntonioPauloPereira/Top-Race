@@ -1,9 +1,19 @@
 const enemy = document.getElementById("enemy");
 const borderTracks = document.getElementById("borderTracks")
 const tracks = document.getElementById("tracks");
-let time = 5;
-let enemyY = -135;
-enemy.style.animationDuration = time + "s";
+
+//Tempo
+let speedBase = 4
+enemy.style.animationDuration = speedBase + "s";
+let speedSpawn = speedBase*1000; 
+let speedmin = 0.3
+
+function updateSpeed(){
+    let trueSpeed = speedBase - (score * 0.2);
+    if(trueSpeed < speedmin){ trueSpeed = speedmin;}
+    enemy.style.animationDuration = truespeed + "s"
+}
+
 
 //Lógica do inimigo
 function colisao() {
@@ -25,6 +35,7 @@ function colisao() {
         enemy.style.animationPlayState = "paused"; 
         tracks.style.animationPlayState = "paused"
         borderTracks.style.animationPlayState = "paused"
+        gameover();
         return; 
     
     }
@@ -34,11 +45,11 @@ requestAnimationFrame(colisao)
 
 //Lógica de nascimento
 setInterval(()=>{
-    const seed = Math.floor(Math.random() * 21)
-if      (seed <= 10 && vivo == true){enemy.style.left = 401 + "px"}
-else if (seed >= 11 && seed <= 20 && vivo == true) {enemy.style.left = 290 + "px"}
+    const seed = Math.floor(Math.random() * 7)
+if      (seed <= 3 && vivo == true){enemy.style.left = 401 + "px"}
+else if (seed >= 4 && vivo == true) {enemy.style.left = 290 + "px"}
 console.log(enemy.offsetTop)
-},5000)
+},speedSpawn)
 
 //Score
 let score = 0;
@@ -52,7 +63,8 @@ function updateScore() {
     if (atual >= 800 && anterior < 800) {
         score++;
         console.log(score);
-        scoreElement.textContent = "Score: "+score;
+        scoreElement.innerText = "Score: "+score;
+    
     }
 
     anterior = atual; // Guarda valor anterior
@@ -61,4 +73,20 @@ function updateScore() {
 
 requestAnimationFrame(updateScore);
 
+//Game over
+function gameover(){
+const overtext = document.getElementById("overtext")
+overtext.innerText = "Game Over!"
 
+const press = document.getElementById("press");
+press.innerText = "Press [R] to restart"
+
+    window.addEventListener( "keydown", (e)=>{
+let key = e.key;
+if(key == "R" || key == "r" || key == "ArrowRight"){
+location.reload();
+}
+
+})
+
+}

@@ -71,7 +71,7 @@ position: absolute;
 width: 19%;
 top: -135px;
 left:290px; 
-animation: enemyAnimation infinite 5s;
+animation: enemyAnimation infinite 0s;
 }
 
 @keyframes enemyAnimation{
@@ -93,4 +93,28 @@ margin: 1%;
     user-select: none;
     bottom: 10%;
     left: 50px;
+}
+
+.over{
+    position: fixed;
+    font-size: 100px;
+    color: red;
+    width: 100%;
+    text-align: center;
+    text-shadow:  -2px -2px 0 black,
+     2px -2px 0 black,
+    -2px  2px 0 black,
+     2px  2px 0 black;;
+}
+
+.press{
+position: absolute;
+    font-size: 50px;
+    color: red;
+    text-align: center;
+    bottom: 280px;
+    text-shadow:  -2px -2px 0 black,
+     2px -2px 0 black,
+    -2px  2px 0 black,
+     2px  2px 0 black;;
 }
