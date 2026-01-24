@@ -52,7 +52,7 @@ function updateScore() {
     if (atual >= 800 && anterior < 800) {
         score++;
         console.log(score);
-        scoreElement.textContent = score;
+        scoreElement.textContent = "Score: "+score;
     }
 
     anterior = atual; // Guarda valor anterior
