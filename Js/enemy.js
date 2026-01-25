@@ -9,9 +9,9 @@ let speedSpawn = speedBase*1000;
 let speedmin = 0.3
 
 function updateSpeed(){
-    let trueSpeed = speedBase - (score * 0.2);
+    let trueSpeed = speedBase - (score/2);
     if(trueSpeed < speedmin){ trueSpeed = speedmin;}
-    enemy.style.animationDuration = truespeed + "s"
+    enemy.style.animationDuration = trueSpeed + "s"
 }
 
 
@@ -64,7 +64,7 @@ function updateScore() {
         score++;
         console.log(score);
         scoreElement.innerText = "Score: "+score;
-    
+        updateSpeed();
     }
 
     anterior = atual; // Guarda valor anterior
