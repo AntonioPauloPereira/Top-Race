@@ -118,3 +118,11 @@ position: absolute;
     -2px  2px 0 black,
      2px  2px 0 black;;
 }
+
+.btn{
+position: absolute;
+left: 30%;
+display: block;
+bottom: -60px;
+
+}

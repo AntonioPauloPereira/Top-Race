@@ -3,7 +3,7 @@ const borderTracks = document.getElementById("borderTracks")
 const tracks = document.getElementById("tracks");
 
 //Tempo
-let speedBase = 4
+let speedBase = 10;
 enemy.style.animationDuration = speedBase + "s";
 let speedSpawn = speedBase*1000; 
 let speedmin = 0.3
@@ -90,3 +90,12 @@ location.reload();
 })
 
 }
+
+const end = document.getElementById("end")
+
+end.addEventListener("click", () => {
+    gameover();
+    enemy.style.animationPlayState = "paused"; 
+    tracks.style.animationPlayState = "paused"
+    borderTracks.style.animationPlayState = "paused"
+});
