@@ -91,6 +91,7 @@ location.reload();
 
 }
 
+//botao end
 const end = document.getElementById("end")
 
 end.addEventListener("click", () => {
