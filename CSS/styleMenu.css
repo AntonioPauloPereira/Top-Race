@@ -9,7 +9,7 @@ font-family: 'Press Start 2P';
 body{
 background-color: rgb(52, 50, 65);
 color: white;
-background-image: url(/Images/fundo.gif);
+background-image: url(../Images/fundo.gif);
 align-self: center;
 }
 
