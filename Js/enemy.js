@@ -9,7 +9,7 @@ let speedSpawn = speedBase*1000;
 let speedmin = 0.3
 
 function updateSpeed(){
-    let trueSpeed = speedBase - (score/2);
+    let trueSpeed = speedBase - (score/4);
     if(trueSpeed < speedmin){ trueSpeed = speedmin;}
     enemy.style.animationDuration = trueSpeed + "s"
 }
@@ -46,10 +46,10 @@ requestAnimationFrame(colisao)
 //Lógica de nascimento
 setInterval(()=>{
     const seed = Math.floor(Math.random() * 7)
-if      (seed <= 3 && vivo == true){enemy.style.left = 401 + "px"}
-else if (seed >= 4 && vivo == true) {enemy.style.left = 290 + "px"}
+if      (seed <= 3 && vivo == true && enemy.offsetTop <= 500){enemy.style.left = 401 + "px"}
+else if (seed >= 4 && vivo == true && enemy.offsetTop <= 500) {enemy.style.left = 290 + "px"}
 console.log(enemy.offsetTop)
-},speedSpawn)
+},2000)
 
 //Score
 let score = 0;
