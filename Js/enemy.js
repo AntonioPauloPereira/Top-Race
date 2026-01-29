@@ -1,11 +1,11 @@
 const enemy = document.getElementById("enemy");
 const borderTracks = document.getElementById("borderTracks")
 const tracks = document.getElementById("tracks");
+let crash = new Audio("crash.mp3");
 
 //Tempo
 let speedBase = 10;
 enemy.style.animationDuration = speedBase + "s";
-let speedSpawn = speedBase*1000; 
 let speedmin = 0.3
 
 function updateSpeed(){
@@ -46,9 +46,10 @@ requestAnimationFrame(colisao)
 //Lógica de nascimento
 setInterval(()=>{
     const seed = Math.floor(Math.random() * 7)
-if      (seed <= 3 && vivo == true && enemy.offsetTop <= 500){enemy.style.left = 401 + "px"}
-else if (seed >= 4 && vivo == true && enemy.offsetTop <= 500) {enemy.style.left = 290 + "px"}
-console.log(enemy.offsetTop)
+
+    if      (seed <= 3 && vivo == true && enemy.offsetTop <= 500){enemy.style.left = 401 + "px"}
+    else if (seed >= 4 && vivo == true && enemy.offsetTop <= 500) {enemy.style.left = 290 + "px"}
+
 },2000)
 
 //Score
@@ -75,7 +76,8 @@ requestAnimationFrame(updateScore);
 
 //Game over
 function gameover(){
-const overtext = document.getElementById("overtext")
+ 
+    const overtext = document.getElementById("overtext")
 overtext.innerText = "Game Over!"
 
 const press = document.getElementById("press");
